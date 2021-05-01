@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+
+	</style>
+	<script type="text/javascript">
+		function favourite(){
+			var name = document.getElementById("name");									//ane save kelocal storage
+			var email = document.getElementById("email");
+
+			localStorage.setItem("name",name.value);
+			localStorage.setItem("email",email.value);
+
+		}
+		function load1(){
+			var name = document.getElementById("name");									//ane refresh page
+			var email = document.getElementById("email");
+
+			
+			name.value = localStorage.getItem("name");
+			email.value = localStorage.getItem("email");
+
+			var name1 = document.getElementById("name1");
+			var email1 = document.getElementById("email1");
+
+			name1.innerHTML = localStorage.getItem("name");
+			email1.innerHTML = localStorage.getItem("email");
+
+		}
+		function load(){
+
+			var name = document.getElementById("name");
+			var email = document.getElementById("email");				//ane preview
+			var name1 = document.getElementById("name1");
+			var email1 = document.getElementById("email1");
+
+			name1.innerHTML = localStorage.getItem("name");
+			email1.innerHTML = localStorage.getItem("email");
+		}
+		function loadandfav(){
+			var name = document.getElementById("name");									//ane save kelocal storage
+			var email = document.getElementById("email");
+
+			localStorage.setItem("name",name.value);
+			localStorage.setItem("email",email.value);
+
+			var name = document.getElementById("name");
+			var email = document.getElementById("email");				//ane preview
+			var name1 = document.getElementById("name1");
+			var email1 = document.getElementById("email1");
+
+			name1.innerHTML = localStorage.getItem("name");
+			email1.innerHTML = localStorage.getItem("email");
+
+		}
+	</script>
+</head>
+<body id="load1">
+<input type="date" id="name" placeholder="Enter name..."><br>
+<input type="email" id="email" placeholder="Enter email..."><br>
+<button onclick="favourite()">Favourite!</button>
+
+<button onclick="load()">preview saja tapi mesti takan yang sebalah dulu(fav)!</button>
+
+<button onclick="loadandfav()">favourite tarus preview</button>
+<div id="name1" contenteditable="true"></div>
+<div id="email1" contenteditable="true"></div>
+</body>
+</html>
